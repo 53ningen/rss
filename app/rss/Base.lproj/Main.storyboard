@@ -16,13 +16,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPY-51-HrT">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPY-51-HrT">
                                 <rect key="frame" x="279" y="244" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q1w-ur-h6F">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q1w-ur-h6F">
                                 <rect key="frame" x="210" y="194" width="180" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="qbw-ct-OVb"/>
@@ -47,6 +47,7 @@
                             <constraint firstAttribute="centerX" secondItem="Q1w-ur-h6F" secondAttribute="centerX" id="ZCX-qa-7AC"/>
                             <constraint firstAttribute="centerX" secondItem="niP-UH-bF5" secondAttribute="centerX" id="i4q-tM-r7z"/>
                             <constraint firstItem="VPY-51-HrT" firstAttribute="top" secondItem="Q1w-ur-h6F" secondAttribute="bottom" constant="20" id="vy7-Vs-gXn"/>
+                            <constraint firstItem="niP-UH-bF5" firstAttribute="top" secondItem="VPY-51-HrT" secondAttribute="bottom" constant="20" id="wnW-jV-Fpp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="神アプリ" id="WHd-Ge-TSo"/>
