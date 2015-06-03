@@ -28,9 +28,19 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+        if identifier == "godSegue" {
+            if topTextField.text == "" { return false }
+            else { return true } 
+        }
+        return true
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let godViewController: GodViewController = segue.destinationViewController as! GodViewController
-        godViewController.godField = self.topTextField.text        
+        if segue.identifier == "godSegue" {
+            let godViewController: GodViewController = segue.destinationViewController as! GodViewController
+            godViewController.godField = self.topTextField.text
+        }
     }
 
 }

@@ -36,7 +36,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="S5x-9Y-5O3" kind="show" id="r9b-hp-kHf"/>
+                                    <segue destination="S5x-9Y-5O3" kind="show" identifier="godSegue" id="r9b-hp-kHf"/>
                                 </connections>
                             </button>
                         </subviews>
