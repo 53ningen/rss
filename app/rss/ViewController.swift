@@ -7,11 +7,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var topTextField: UITextField!
 
     @IBOutlet weak var topLabel: UILabel!
+    
+    @IBOutlet weak var sendButton: UIButton!
     
 //    @IBAction func topButton(sender: AnyObject) {
 //        topLabel.text = "hoge"
@@ -21,6 +23,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.topTextField.delegate = self
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        topTextField.text = "" 
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.sendButton.sendActionsForControlEvents(.TouchUpInside)
+        return true
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,6 +74,7 @@ class ViewController: UIViewController {
         if segue.identifier == "godSegue" {
             let godViewController: GodViewController = segue.destinationViewController as! GodViewController
             godViewController.godField = self.topTextField.text
+            topTextField.resignFirstResponder()
         }
     }
 

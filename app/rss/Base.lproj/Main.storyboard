@@ -28,7 +28,7 @@
                                     <constraint firstAttribute="width" constant="180" id="qbw-ct-OVb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="send"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="niP-UH-bF5">
                                 <rect key="frame" x="277" y="285" width="46" height="30"/>
@@ -52,6 +52,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="神アプリ" id="WHd-Ge-TSo"/>
                     <connections>
+                        <outlet property="sendButton" destination="niP-UH-bF5" id="RHO-Bj-gNL"/>
                         <outlet property="topLabel" destination="VPY-51-HrT" id="tbW-Db-4dF"/>
                         <outlet property="topTextField" destination="Q1w-ur-h6F" id="Efb-ef-DuN"/>
                     </connections>
