@@ -8,18 +8,44 @@
 
 import UIKit
 
-class AricleViewController: UIViewController {
+class AricleViewController: UIViewController, UIWebViewDelegate {
+    
+    let gochiusaUrlString: String = "http://gochiusa.com"
+
+    @IBAction func goBack(sender: AnyObject) {
+        self.articleWebView.goBack()
+    }
+    @IBAction func goForward(sender: AnyObject) {
+        self.articleWebView.goForward()
+    }
+    @IBAction func reflesh(sender: AnyObject) {
+        self.articleWebView.reload()
+    }
 
     @IBOutlet weak var articleWebView: UIWebView!
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        articleWebView.loadHTMLString("<br><br><br><br><br><br><b>hoge</b>", baseURL: nil)
+    func webViewDidStartLoad(webView: UIWebView) {
+        
+    }
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
+        setupBottuonsEnabled()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.articleWebView.delegate = self
+        if let url = NSURL(string: gochiusaUrlString) {
+            let urlRequest = NSURLRequest(URL: url)
+            self.articleWebView.loadRequest(urlRequest)
+        }
+        setupBottuonsEnabled()
+    }
+    
+    func setupBottuonsEnabled() {
+        self.backButton.enabled = self.articleWebView.canGoBack
+        self.forwardButoon.enabled = self.articleWebView.canGoForward
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,5 +63,8 @@ class AricleViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBOutlet weak var backButton: UIBarButtonItem!
+    @IBOutlet weak var forwardButoon: UIBarButtonItem!
+    @IBOutlet weak var refleshButton: UIBarButtonItem!
 
 }

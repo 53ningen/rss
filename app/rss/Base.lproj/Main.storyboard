@@ -135,20 +135,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SyI-ke-vqj">
-                                <rect key="frame" x="16" y="64" width="568" height="536"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mC0-hj-yA1">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem id="r8U-a1-z7W">
+                                        <string key="title" base64-UTF8="YES">
+CEJhY2s
+</string>
+                                        <connections>
+                                            <action selector="goBack:" destination="SZw-5P-Wgd" id="rFT-ab-th2"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Forward" id="5x2-zy-IgJ">
+                                        <connections>
+                                            <action selector="goForward:" destination="SZw-5P-Wgd" id="9Yd-rK-4x4"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="tZI-ts-Jce"/>
+                                    <barButtonItem title="Reflesh" id="aPu-Qd-DBw">
+                                        <connections>
+                                            <action selector="reflesh:" destination="SZw-5P-Wgd" id="FWI-De-v7w"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="57G-UN-YQS" firstAttribute="top" secondItem="SyI-ke-vqj" secondAttribute="bottom" id="4r8-Le-YMu"/>
-                            <constraint firstItem="SyI-ke-vqj" firstAttribute="leading" secondItem="hvI-qt-gJT" secondAttribute="leadingMargin" id="5hL-Gs-NBI"/>
-                            <constraint firstItem="SyI-ke-vqj" firstAttribute="top" secondItem="9tC-8O-p2Y" secondAttribute="bottom" id="Qeq-Vy-0F9"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="SyI-ke-vqj" secondAttribute="trailing" id="d4s-QM-MCE"/>
+                            <constraint firstItem="57G-UN-YQS" firstAttribute="top" secondItem="mC0-hj-yA1" secondAttribute="bottom" id="9FL-pQ-7x9"/>
+                            <constraint firstAttribute="trailing" secondItem="SyI-ke-vqj" secondAttribute="trailing" id="9v0-q3-Wea"/>
+                            <constraint firstItem="SyI-ke-vqj" firstAttribute="top" secondItem="9tC-8O-p2Y" secondAttribute="bottom" id="DGd-uH-nm4"/>
+                            <constraint firstItem="mC0-hj-yA1" firstAttribute="leading" secondItem="hvI-qt-gJT" secondAttribute="leading" id="DP6-F4-w2V"/>
+                            <constraint firstAttribute="trailing" secondItem="mC0-hj-yA1" secondAttribute="trailing" id="I0K-AR-JY0"/>
+                            <constraint firstItem="57G-UN-YQS" firstAttribute="top" secondItem="SyI-ke-vqj" secondAttribute="bottom" id="cfp-i1-ihl"/>
+                            <constraint firstItem="SyI-ke-vqj" firstAttribute="leading" secondItem="hvI-qt-gJT" secondAttribute="leading" id="e7U-85-bRk"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="articleWebView" destination="SyI-ke-vqj" id="tud-SK-mPT"/>
+                        <outlet property="backButton" destination="r8U-a1-z7W" id="TOI-F2-5Vx"/>
+                        <outlet property="forwardButoon" destination="5x2-zy-IgJ" id="P16-Kb-SZo"/>
+                        <outlet property="refleshButton" destination="aPu-Qd-DBw" id="pua-u6-0rY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2WD-dg-P9L" userLabel="First Responder" sceneMemberID="firstResponder"/>
