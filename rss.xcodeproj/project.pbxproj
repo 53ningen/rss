@@ -10,6 +10,26 @@
 	<string>46</string>
 	<key>objects</key>
 	<dict>
+		<key>FFA57DEA1B20569D00DD980E</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ArticleViewController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FFA57DEB1B20569D00DD980E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FFA57DEA1B20569D00DD980E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>FFEF5A0C1B1F268F003919D4</key>
 		<dict>
 			<key>children</key>
@@ -99,6 +119,7 @@
 			<key>files</key>
 			<array>
 				<string>FFEF5A1D1B1F268F003919D4</string>
+				<string>FFA57DEB1B20569D00DD980E</string>
 				<string>FFEF5A1B1B1F268F003919D4</string>
 			</array>
 			<key>isa</key>
@@ -194,11 +215,10 @@
 				<string>FFEF5A211B1F268F003919D4</string>
 				<string>FFEF5A231B1F268F003919D4</string>
 				<string>FFEF5A181B1F268F003919D4</string>
+				<string>FFA57DEA1B20569D00DD980E</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>rss</string>
 			<key>path</key>
 			<string>rss</string>
 			<key>sourceTree</key>
@@ -458,8 +478,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>rssTests</string>
 			<key>path</key>
 			<string>rssTests</string>
 			<key>sourceTree</key>
@@ -688,6 +706,8 @@
 				<string>AppIcon</string>
 				<key>INFOPLIST_FILE</key>
 				<string>app/rss/Supporting Files/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.3</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<string>$(inherited) @executable_path/Frameworks</string>
 				<key>PRODUCT_NAME</key>
@@ -706,6 +726,8 @@
 				<string>AppIcon</string>
 				<key>INFOPLIST_FILE</key>
 				<string>app/rss/Supporting Files/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.3</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
 				<string>$(inherited) @executable_path/Frameworks</string>
 				<key>PRODUCT_NAME</key>

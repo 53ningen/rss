@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qM5-0h-Rrt">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="rss" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +15,108 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFw-a1-hI3">
+                                <rect key="frame" x="277" y="285" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="T6l-Fw-dCF" kind="show" id="pDz-0L-Pea"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="lFw-a1-hI3" secondAttribute="centerX" id="Gn7-Xt-Skd"/>
+                            <constraint firstAttribute="centerY" secondItem="lFw-a1-hI3" secondAttribute="centerY" id="llg-Ov-mwU"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="9dN-kb-Nqa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1709" y="457"/>
+        </scene>
+        <!--RSS Reader-->
+        <scene sceneID="Qme-Iv-0W1">
+            <objects>
+                <viewController id="T6l-Fw-dCF" customClass="ArticleViewController" customModule="rss" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bbG-mG-ITj"/>
+                        <viewControllerLayoutGuide type="bottom" id="jNl-2a-5CZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wXB-iT-NPa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZsJ-L6-Aza">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="rewind" id="hYw-3R-5Nw">
+                                        <connections>
+                                            <action selector="goBack:" destination="T6l-Fw-dCF" id="3Ef-nt-ukK"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="aZe-Pi-8Eg"/>
+                                    <barButtonItem systemItem="fastForward" id="R6W-oe-2Ns">
+                                        <connections>
+                                            <action selector="goForward:" destination="T6l-Fw-dCF" id="3oc-SC-thk"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cop-dl-tI8">
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZsJ-L6-Aza" firstAttribute="top" secondItem="cop-dl-tI8" secondAttribute="bottom" id="49v-Sj-2w1"/>
+                            <constraint firstItem="cop-dl-tI8" firstAttribute="top" secondItem="bbG-mG-ITj" secondAttribute="bottom" id="Eg4-gP-AIJ"/>
+                            <constraint firstAttribute="trailing" secondItem="cop-dl-tI8" secondAttribute="trailing" id="Q5n-Dk-pek"/>
+                            <constraint firstItem="ZsJ-L6-Aza" firstAttribute="leading" secondItem="wXB-iT-NPa" secondAttribute="leading" id="UkQ-oY-IFc"/>
+                            <constraint firstItem="cop-dl-tI8" firstAttribute="leading" secondItem="wXB-iT-NPa" secondAttribute="leading" id="bDc-Ni-JQN"/>
+                            <constraint firstAttribute="bottom" secondItem="ZsJ-L6-Aza" secondAttribute="bottom" id="o3W-gH-1fl"/>
+                            <constraint firstAttribute="trailing" secondItem="ZsJ-L6-Aza" secondAttribute="trailing" id="wEj-hc-znz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="RSS Reader" id="9HT-uO-9FH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="8Fy-RO-gPl">
+                            <connections>
+                                <action selector="reload:" destination="T6l-Fw-dCF" id="8fU-Ac-ZE6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backButton" destination="hYw-3R-5Nw" id="uCQ-h9-eDB"/>
+                        <outlet property="forwardButton" destination="R6W-oe-2Ns" id="KUi-xK-P8m"/>
+                        <outlet property="reloadButton" destination="8Fy-RO-gPl" id="Mgu-OT-a0P"/>
+                        <outlet property="webView" destination="cop-dl-tI8" id="a4J-V6-HyA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g0f-iw-6rc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2433" y="457"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6VW-d2-bJF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qM5-0h-Rrt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PHG-Yt-uzM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="REz-vD-I0G"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ctc-15-OXI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="953" y="457"/>
         </scene>
     </scenes>
 </document>
