@@ -10,15 +10,15 @@ import UIKit
 class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var topTextField: UITextField!
-
+    
     @IBOutlet weak var topLabel: UILabel!
     
     @IBOutlet weak var sendButton: UIButton!
     
-//    @IBAction func topButton(sender: AnyObject) {
-//        topLabel.text = "hoge"
-//        topLabel.textColor = UIColor.blueColor()
-//    }
+    //    @IBAction func topButton(sender: AnyObject) {
+    //        topLabel.text = "hoge"
+    //        topLabel.textColor = UIColor.blueColor()
+    //    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +28,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        topTextField.text = "" 
+        topTextField.text = ""
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.sendButton.sendActionsForControlEvents(.TouchUpInside)
         return true
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -77,5 +77,5 @@ class ViewController: UIViewController, UITextFieldDelegate {
             topTextField.resignFirstResponder()
         }
     }
-
+    
 }

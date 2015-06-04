@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="SWV-cV-Rs7">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--神アプリ-->
@@ -39,18 +40,34 @@
                                     <segue destination="S5x-9Y-5O3" kind="show" identifier="godSegue" id="r9b-hp-kHf"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7QL-pF-Okl">
+                                <rect key="frame" x="16" y="343" width="568" height="257"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="7QL-pF-Okl" secondAttribute="trailing" id="1gI-Tm-Std"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7QL-pF-Okl" secondAttribute="bottom" id="2UT-z5-To7"/>
+                            <constraint firstItem="7QL-pF-Okl" firstAttribute="top" secondItem="niP-UH-bF5" secondAttribute="bottom" constant="28" id="9pr-Yl-BoM"/>
+                            <constraint firstItem="7QL-pF-Okl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="BKW-zZ-VEO"/>
                             <constraint firstAttribute="centerX" secondItem="VPY-51-HrT" secondAttribute="centerX" id="DZb-DH-jr1"/>
                             <constraint firstAttribute="centerY" secondItem="niP-UH-bF5" secondAttribute="centerY" id="R4r-vp-HhE"/>
+                            <constraint firstAttribute="centerX" secondItem="7QL-pF-Okl" secondAttribute="centerX" id="WTZ-kO-YI7"/>
                             <constraint firstAttribute="centerX" secondItem="Q1w-ur-h6F" secondAttribute="centerX" id="ZCX-qa-7AC"/>
                             <constraint firstAttribute="centerX" secondItem="niP-UH-bF5" secondAttribute="centerX" id="i4q-tM-r7z"/>
                             <constraint firstItem="VPY-51-HrT" firstAttribute="top" secondItem="Q1w-ur-h6F" secondAttribute="bottom" constant="20" id="vy7-Vs-gXn"/>
                             <constraint firstItem="niP-UH-bF5" firstAttribute="top" secondItem="VPY-51-HrT" secondAttribute="bottom" constant="20" id="wnW-jV-Fpp"/>
                         </constraints>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="subviews">
+                                <exclude reference="7QL-pF-Okl"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="神アプリ" id="WHd-Ge-TSo"/>
+                    <navigationItem key="navigationItem" title="神アプリ" id="WHd-Ge-TSo">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="QGi-Zh-qT3"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="sendButton" destination="niP-UH-bF5" id="RHO-Bj-gNL"/>
                         <outlet property="topLabel" destination="VPY-51-HrT" id="tbW-Db-4dF"/>
@@ -79,11 +96,22 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQ0-K4-h9f">
+                                <rect key="frame" x="277" y="239" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="SZw-5P-Wgd" kind="show" id="6vJ-QP-XBO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="iPT-0L-Xg1" secondAttribute="centerX" id="9dY-Xe-z9z"/>
                             <constraint firstAttribute="centerY" secondItem="iPT-0L-Xg1" secondAttribute="centerY" id="E8r-eF-MvU"/>
+                            <constraint firstItem="iPT-0L-Xg1" firstAttribute="top" secondItem="JQ0-K4-h9f" secondAttribute="bottom" constant="20" id="H1z-7h-tBs"/>
+                            <constraint firstAttribute="centerX" secondItem="JQ0-K4-h9f" secondAttribute="centerX" id="ebe-gu-uQb"/>
                         </constraints>
                     </view>
                     <connections>
@@ -93,6 +121,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5zy-Oo-fKa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1812" y="261"/>
+        </scene>
+        <!--Aricle View Controller-->
+        <scene sceneID="e0S-Cn-f7x">
+            <objects>
+                <viewController id="SZw-5P-Wgd" customClass="AricleViewController" customModule="rss" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9tC-8O-p2Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="57G-UN-YQS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hvI-qt-gJT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SyI-ke-vqj">
+                                <rect key="frame" x="16" y="64" width="568" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="57G-UN-YQS" firstAttribute="top" secondItem="SyI-ke-vqj" secondAttribute="bottom" id="4r8-Le-YMu"/>
+                            <constraint firstItem="SyI-ke-vqj" firstAttribute="leading" secondItem="hvI-qt-gJT" secondAttribute="leadingMargin" id="5hL-Gs-NBI"/>
+                            <constraint firstItem="SyI-ke-vqj" firstAttribute="top" secondItem="9tC-8O-p2Y" secondAttribute="bottom" id="Qeq-Vy-0F9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SyI-ke-vqj" secondAttribute="trailing" id="d4s-QM-MCE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="articleWebView" destination="SyI-ke-vqj" id="tud-SK-mPT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2WD-dg-P9L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2501" y="261"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xZK-be-Gti">
