@@ -26,6 +26,12 @@ class ArticleViewController: UIViewController, UIWebViewDelegate {
         }
     }
 
+    func webView(webView: UIWebView, didFailLoadWithError error: NSError) {
+        if error.code != NSURLErrorCancelled {
+            // doSomething
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -35,6 +41,7 @@ class ArticleViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var forwardButton: UIBarButtonItem!
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var reloadButton: UIBarButtonItem!
+    @IBOutlet weak var navItem: UINavigationItem!
     
     @IBAction func goBack(sender: AnyObject) {
         webView.goBack()
@@ -49,16 +56,20 @@ class ArticleViewController: UIViewController, UIWebViewDelegate {
     }
     
     func webViewDidStartLoad(webView: UIWebView) {
-        
     }
-    
+   
     func webViewDidFinishLoad(webView: UIWebView) {
         updateButtons()
+        updateNavBar()
     }
     
     func updateButtons() {
         backButton.enabled = webView.canGoBack
         forwardButton.enabled = webView.canGoForward
+    }
+    
+    func updateNavBar() {
+        navItem.title = webView.stringByEvaluatingJavaScriptFromString("document.title")
     }
 
     /*
