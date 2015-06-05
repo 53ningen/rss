@@ -30,6 +30,78 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>FFD1F7121B21A91A00707CCD</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FFD1F7131B21A94F00707CCD</string>
+				<string>FFD1F7151B21AA7A00707CCD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>model</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FFD1F7131B21A94F00707CCD</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Article.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FFD1F7141B21A94F00707CCD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FFD1F7131B21A94F00707CCD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FFD1F7151B21AA7A00707CCD</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ArticleCell.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FFD1F7161B21AA7A00707CCD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FFD1F7151B21AA7A00707CCD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FFD1F7171B21C01500707CCD</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>image.jpeg</string>
+			<key>path</key>
+			<string>cocoa.jpg</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FFD1F7181B21C01500707CCD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FFD1F7171B21C01500707CCD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>FFEF5A0C1B1F268F003919D4</key>
 		<dict>
 			<key>children</key>
@@ -118,8 +190,10 @@
 			<string>2147483647</string>
 			<key>files</key>
 			<array>
+				<string>FFD1F7141B21A94F00707CCD</string>
 				<string>FFEF5A1D1B1F268F003919D4</string>
 				<string>FFA57DEB1B20569D00DD980E</string>
+				<string>FFD1F7161B21AA7A00707CCD</string>
 				<string>FFEF5A1B1B1F268F003919D4</string>
 			</array>
 			<key>isa</key>
@@ -145,6 +219,7 @@
 			<key>files</key>
 			<array>
 				<string>FFEF5A201B1F268F003919D4</string>
+				<string>FFD1F7181B21C01500707CCD</string>
 				<string>FFEF5A251B1F268F003919D4</string>
 				<string>FFEF5A221B1F268F003919D4</string>
 			</array>
@@ -209,6 +284,8 @@
 		<dict>
 			<key>children</key>
 			<array>
+				<string>FFD1F7171B21C01500707CCD</string>
+				<string>FFD1F7121B21A91A00707CCD</string>
 				<string>FFEF5A1A1B1F268F003919D4</string>
 				<string>FFEF5A1C1B1F268F003919D4</string>
 				<string>FFEF5A1E1B1F268F003919D4</string>

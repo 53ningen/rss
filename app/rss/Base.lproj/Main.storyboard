@@ -2,9 +2,10 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qM5-0h-Rrt">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Gochiusa RSS Reader-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="rss" customModuleProvider="target" sceneMemberID="viewController">
@@ -13,11 +14,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Sf-Lj-CYi">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="camera" id="Rnr-n1-bBM">
                                         <connections>
@@ -26,31 +27,67 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tgH-ab-Efy">
-                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="o1a-qY-PSX">
+                                <rect key="frame" x="0.0" y="64" width="414" height="628"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="articleCell" rowHeight="80" id="Deg-wE-fTL" customClass="ArticleCell" customModule="rss" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Deg-wE-fTL" id="wWO-P0-K5B">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cocoa.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="bOI-AO-LCl">
+                                                    <rect key="frame" x="13" y="13" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="N0j-nR-WYb"/>
+                                                        <constraint firstAttribute="height" constant="60" id="qdl-gK-D0G"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Haskell 基本構文のまとめ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lx4-Sh-7wc">
+                                                    <rect key="frame" x="88" y="33" width="197" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bOI-AO-LCl" firstAttribute="leading" secondItem="wWO-P0-K5B" secondAttribute="leadingMargin" constant="5" id="HgS-ey-La2"/>
+                                                <constraint firstItem="bOI-AO-LCl" firstAttribute="centerY" secondItem="Lx4-Sh-7wc" secondAttribute="centerY" id="P8b-y0-sr5"/>
+                                                <constraint firstItem="bOI-AO-LCl" firstAttribute="top" secondItem="wWO-P0-K5B" secondAttribute="topMargin" constant="5" id="UQ0-Sh-pHx"/>
+                                                <constraint firstItem="Lx4-Sh-7wc" firstAttribute="leading" secondItem="bOI-AO-LCl" secondAttribute="trailing" constant="15" id="lJg-Yu-3d9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="thumbnailImage" destination="bOI-AO-LCl" id="oWx-ot-Jhb"/>
+                                            <outlet property="titleLabel" destination="Lx4-Sh-7wc" id="Yu6-gV-ker"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8Sf-Lj-CYi" firstAttribute="top" secondItem="tgH-ab-Efy" secondAttribute="bottom" id="A8h-lv-j6A"/>
+                            <constraint firstItem="8Sf-Lj-CYi" firstAttribute="top" secondItem="o1a-qY-PSX" secondAttribute="bottom" id="4OF-Jp-HWv"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8Sf-Lj-CYi" secondAttribute="bottom" id="OWo-LS-roq"/>
+                            <constraint firstItem="o1a-qY-PSX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XZD-ui-AKD"/>
                             <constraint firstAttribute="trailing" secondItem="8Sf-Lj-CYi" secondAttribute="trailing" id="ayQ-YK-9Gs"/>
-                            <constraint firstAttribute="trailing" secondItem="tgH-ab-Efy" secondAttribute="trailing" id="rdS-wc-hIX"/>
-                            <constraint firstItem="tgH-ab-Efy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="rq8-3E-mwP"/>
-                            <constraint firstItem="tgH-ab-Efy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="sbu-vj-opV"/>
+                            <constraint firstItem="o1a-qY-PSX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="crn-CX-skq"/>
+                            <constraint firstAttribute="trailing" secondItem="o1a-qY-PSX" secondAttribute="trailing" id="jMI-ru-lya"/>
                             <constraint firstItem="8Sf-Lj-CYi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zu8-Jy-JEn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="9dN-kb-Nqa">
+                    <navigationItem key="navigationItem" title="Gochiusa RSS Reader" id="9dN-kb-Nqa">
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="V6k-IL-0bY">
                             <connections>
                                 <action selector="reload:" destination="BYZ-38-t0r" id="jjY-CD-bc1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="reloadButton" destination="V6k-IL-0bY" id="Yf8-cb-vLU"/>
+                        <outlet property="tableView" destination="o1a-qY-PSX" id="pj5-gI-NCU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -66,11 +103,11 @@
                         <viewControllerLayoutGuide type="bottom" id="jNl-2a-5CZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wXB-iT-NPa">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZsJ-L6-Aza">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="rewind" id="hYw-3R-5Nw">
                                         <connections>
@@ -86,7 +123,7 @@
                                 </items>
                             </toolbar>
                             <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cop-dl-tI8">
-                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="628"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
@@ -108,6 +145,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="backButton" destination="hYw-3R-5Nw" id="uCQ-h9-eDB"/>
                         <outlet property="forwardButton" destination="R6W-oe-2Ns" id="KUi-xK-P8m"/>
@@ -126,6 +164,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qM5-0h-Rrt" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PHG-Yt-uzM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -140,4 +179,7 @@
             <point key="canvasLocation" x="953" y="457"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cocoa.jpg" width="350" height="350"/>
+    </resources>
 </document>
