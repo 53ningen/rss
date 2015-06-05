@@ -10,7 +10,7 @@ import UIKit
 
 class ArticleViewController: UIViewController, UIWebViewDelegate {
     
-    let defaultUrlString: String = "http://gochiusa.com"
+    var url: NSURL? = NSURL(string: "http://gochiusa.com")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +20,8 @@ class ArticleViewController: UIViewController, UIWebViewDelegate {
     }
     
     func initWebView() {
-        if let url = NSURL(string: defaultUrlString) {
-            let request = NSURLRequest(URL: url)
+        if let u = url {
+            let request = NSURLRequest(URL: u)
             webView.loadRequest(request)
         }
     }

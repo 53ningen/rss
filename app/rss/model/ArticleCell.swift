@@ -21,7 +21,7 @@ class ArticleCell: UITableViewCell {
     }
     
     func setArticle(article: Article) {
-        titleLabel.text = article.name
+        titleLabel.text = article.title
         if let url = article.imageUrl {
             var e: NSError?
             let imageData: NSData? = NSData(contentsOfURL: url, options: NSDataReadingOptions.DataReadingMappedIfSafe, error: &e)

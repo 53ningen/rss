@@ -20,11 +20,7 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Sf-Lj-CYi">
                                 <rect key="frame" x="0.0" y="692" width="414" height="44"/>
                                 <items>
-                                    <barButtonItem systemItem="camera" id="Rnr-n1-bBM">
-                                        <connections>
-                                            <segue destination="T6l-Fw-dCF" kind="show" id="zE5-TO-tBI"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem systemItem="camera" id="Rnr-n1-bBM"/>
                                 </items>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="o1a-qY-PSX">
@@ -45,13 +41,14 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Haskell 基本構文のまとめ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lx4-Sh-7wc">
-                                                    <rect key="frame" x="88" y="33" width="197" height="21"/>
+                                                    <rect key="frame" x="88" y="33" width="318" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Lx4-Sh-7wc" secondAttribute="trailing" id="AWt-T7-FxG"/>
                                                 <constraint firstItem="bOI-AO-LCl" firstAttribute="leading" secondItem="wWO-P0-K5B" secondAttribute="leadingMargin" constant="5" id="HgS-ey-La2"/>
                                                 <constraint firstItem="bOI-AO-LCl" firstAttribute="centerY" secondItem="Lx4-Sh-7wc" secondAttribute="centerY" id="P8b-y0-sr5"/>
                                                 <constraint firstItem="bOI-AO-LCl" firstAttribute="top" secondItem="wWO-P0-K5B" secondAttribute="topMargin" constant="5" id="UQ0-Sh-pHx"/>
@@ -88,6 +85,7 @@
                     <connections>
                         <outlet property="reloadButton" destination="V6k-IL-0bY" id="Yf8-cb-vLU"/>
                         <outlet property="tableView" destination="o1a-qY-PSX" id="pj5-gI-NCU"/>
+                        <segue destination="T6l-Fw-dCF" kind="show" identifier="cellSegue" id="zUl-zl-7dp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -157,7 +155,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g0f-iw-6rc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2432" y="464"/>
+            <point key="canvasLocation" x="2231" y="457"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6VW-d2-bJF">

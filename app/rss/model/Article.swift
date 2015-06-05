@@ -9,12 +9,14 @@ import Foundation
 
 class Article: NSObject {
     
-    let name: String
+    let title: String
+    let url: NSURL?
     let imageUrl: NSURL?
     
-    init(name: String, imageUrl: NSURL?) {
-        self.name = name
+    init(title: String, url: NSURL?, imageUrl: NSURL?) {
+        self.title = title
+        self.url = url
         self.imageUrl = imageUrl
     }
-    
+
 }
