@@ -46,16 +46,36 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2014-01-01 00:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRS-9a-fkj">
+                                                    <rect key="frame" x="88" y="17" width="326" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.62028488005050497" green="0.62028488005050497" blue="0.62028488005050497" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kgo-f3-cGC">
+                                                    <rect key="frame" x="88" y="54" width="318" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.62028488010000005" green="0.62028488010000005" blue="0.62028488010000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Lx4-Sh-7wc" secondAttribute="trailing" id="AWt-T7-FxG"/>
                                                 <constraint firstItem="bOI-AO-LCl" firstAttribute="leading" secondItem="wWO-P0-K5B" secondAttribute="leadingMargin" constant="5" id="HgS-ey-La2"/>
+                                                <constraint firstItem="Kgo-f3-cGC" firstAttribute="top" secondItem="Lx4-Sh-7wc" secondAttribute="bottom" id="IZH-qG-PXn"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="dRS-9a-fkj" secondAttribute="bottom" constant="37" id="OhF-0R-vDn"/>
                                                 <constraint firstItem="bOI-AO-LCl" firstAttribute="centerY" secondItem="Lx4-Sh-7wc" secondAttribute="centerY" id="P8b-y0-sr5"/>
+                                                <constraint firstItem="dRS-9a-fkj" firstAttribute="leading" secondItem="bOI-AO-LCl" secondAttribute="trailing" constant="15" id="Rzn-kR-TQB"/>
                                                 <constraint firstItem="bOI-AO-LCl" firstAttribute="top" secondItem="wWO-P0-K5B" secondAttribute="topMargin" constant="5" id="UQ0-Sh-pHx"/>
+                                                <constraint firstAttribute="trailing" secondItem="dRS-9a-fkj" secondAttribute="trailing" id="UtJ-Qc-jDD"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Kgo-f3-cGC" secondAttribute="trailing" id="ipF-i5-nc7"/>
                                                 <constraint firstItem="Lx4-Sh-7wc" firstAttribute="leading" secondItem="bOI-AO-LCl" secondAttribute="trailing" constant="15" id="lJg-Yu-3d9"/>
+                                                <constraint firstItem="Kgo-f3-cGC" firstAttribute="leading" secondItem="bOI-AO-LCl" secondAttribute="trailing" constant="15" id="mya-cp-Csk"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="authorLabel" destination="Kgo-f3-cGC" id="oJ3-Ey-W1F"/>
+                                            <outlet property="dateLabel" destination="dRS-9a-fkj" id="z53-lO-dQy"/>
                                             <outlet property="thumbnailImage" destination="bOI-AO-LCl" id="oWx-ot-Jhb"/>
                                             <outlet property="titleLabel" destination="Lx4-Sh-7wc" id="Yu6-gV-ker"/>
                                         </connections>
@@ -77,7 +97,7 @@
                     <navigationItem key="navigationItem" title="Gochiusa RSS Reader" id="9dN-kb-Nqa">
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="V6k-IL-0bY">
                             <connections>
-                                <action selector="reload:" destination="BYZ-38-t0r" id="jjY-CD-bc1"/>
+                                <action selector="reloadEntries:" destination="BYZ-38-t0r" id="ztQ-9j-mir"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

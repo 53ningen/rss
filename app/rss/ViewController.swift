@@ -7,23 +7,80 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSXMLParserDelegate {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //TagsFeedApiClient.getFeed(getHttp)
         self.tableView.delegate = self
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.tableView.dataSource = self
+        getEntries()
     }
     
-    func getHttp(res: NSURLResponse?, data: NSData?, error: NSError?) -> Void {
-        if let e = error {
-            
-        } else if let d = data {
-            let responseData = NSString(data: d, encoding: NSUTF8StringEncoding)
-            println(responseData)
+    @IBAction func reloadEntries(sender: AnyObject) {
+        getEntries()
+        tableView.reloadData()
+    }
+    
+    func getEntries() {
+        let url: NSURL = NSURL(string: "http://qiita.com/tags/swift/feed.atom")!
+        let parser: NSXMLParser = NSXMLParser(contentsOfURL: url)!
+        parser.delegate = self
+        parser.parse()
+    }
+    
+    var token: String = ""
+    var entries: [Entry] = []
+    var currentElement: String? = nil
+    var entryBuilder: EntryBuilder = EntryBuilder()
+    
+    func parserDidStartDocument(parser: NSXMLParser) {
+    }
+    
+    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [NSObject : AnyObject]) {
+        switch elementName {
+        case "entry":
+            currentElement = elementName
+        default:
+            break
         }
+        token = ""
+    }
+    
+    func parser(parser: NSXMLParser, foundCharacters string: String?) {
+        if let s = string {
+            token = token + s
+        }
+    }
+    
+    func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
+        if let elem = currentElement {
+            switch elementName {
+            case "entry":
+                entries.append(entryBuilder.build())
+                currentElement = nil
+            case "id":
+                entryBuilder.id = token
+            case "name":
+                entryBuilder.author = token
+            case "published":
+                entryBuilder.published = token
+            case "updated":
+                entryBuilder.updated = token
+            case "url":
+                entryBuilder.url = NSURL(string: token)
+            case "title":
+                entryBuilder.title = token
+            case "content":
+                break
+            default:
+                break
+            }
+        }
+        token = ""
+    }
+
+    func parserDidEndDocument(parser: NSXMLParser) {
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,41 +89,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet weak var tableView: UITableView!
     
-    let articles: [Article] = [
-        Article(
-            title: "ご注文はうさぎですか(1) ココア",
-            url: NSURL(string: "http://www.gochiusa.com/contents/chara/cocoa.html"),
-            imageUrl: NSURL(string: "http://www.gochiusa.com/core_sys/images/main/cont/news/t_icon3/cocoa_anime.jpg")
-        ),
-        Article(
-            title: "ご注文はうさぎですか(2) チノ",
-            url: NSURL(string: "http://www.gochiusa.com/contents/chara/chino.html"),
-            imageUrl: NSURL(string: "http://www.gochiusa.com/core_sys/images/main/cont/news/t_icon3/chino_anime.jpg")
-        ),
-        Article(
-            title: "ご注文はうさぎですか(3) リゼ",
-            url: NSURL(string: "http://www.gochiusa.com/contents/chara/rize.html"),
-            imageUrl: NSURL(string: "http://www.gochiusa.com/core_sys/images/main/cont/news/t_icon3/rize_anime.jpg")
-        ),
-        Article(
-            title: "ご注文はうさぎですか(4) 千夜",
-            url: NSURL(string: "http://www.gochiusa.com/contents/chara/chiya.html"),
-            imageUrl: NSURL(string: "http://www.gochiusa.com/core_sys/images/main/cont/news/t_icon3/chiya_anime.jpg")
-        ),
-        Article(
-            title: "ご注文はうさぎですか(5) シャロ ",
-            url: NSURL(string: "http://www.gochiusa.com/contents/chara/syaro.html"),
-            imageUrl: NSURL(string: "http://www.gochiusa.com/core_sys/images/main/cont/news/t_icon3/sharo_anime.jpg")
-        )
-    ]
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return articles.count
+        return entries.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("articleCell", forIndexPath: indexPath) as! ArticleCell
-        cell.setArticle(articles[indexPath.item])
+        cell.setArticle(entries[indexPath.item])
         return cell
     }
 
@@ -74,7 +103,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         tableView.resignFirstResponder()
         tableView.cellForRowAtIndexPath(indexPath)?.resignFirstResponder()
-        targetUrl = articles[indexPath.item].url
+        targetUrl = entries[indexPath.item].url
         performSegueWithIdentifier("cellSegue", sender: nil)
     }
     

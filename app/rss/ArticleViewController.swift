@@ -2,7 +2,6 @@
 //  ArticleViewController.swift
 //  rss
 //
-//  Created by 柳　裕貴 on 2015/06/04.
 //  Copyright (c) 2015年 gomi_ningen. All rights reserved.
 //
 
