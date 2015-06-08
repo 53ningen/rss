@@ -11,19 +11,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let rssFeedUrl:NSURL = NSURL(string:"http://qiita.com/tags/swift/feed.atom")!
-        let request: NSURLRequest = NSURLRequest(URL: rssFeedUrl)
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: self.getHttp)
+        //TagsFeedApiClient.getFeed(getHttp)
         self.tableView.delegate = self
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.tableView.dataSource = self
     }
     
-    func getHttp(res: NSURLResponse?, data: NSData?, error: NSError?) {
+    func getHttp(res: NSURLResponse?, data: NSData?, error: NSError?) -> Void {
         if let e = error {
             
         } else if let d = data {
             let responseData = NSString(data: d, encoding: NSUTF8StringEncoding)
+            println(responseData)
         }
     }
 
@@ -72,6 +71,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.resignFirstResponder()
+        tableView.cellForRowAtIndexPath(indexPath)?.resignFirstResponder()
         targetUrl = articles[indexPath.item].url
         performSegueWithIdentifier("cellSegue", sender: nil)
     }

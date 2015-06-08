@@ -102,6 +102,69 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>FFD1F7191B2564B200707CCD</key>
+		<dict>
+			<key>children</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>domain</string>
+			<key>path</key>
+			<string>domain</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FFD1F71A1B2564D200707CCD</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>TagsFeedApiClient.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FFD1F71B1B2564D200707CCD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FFD1F71A1B2564D200707CCD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FFD1F71C1B2564E000707CCD</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FFD1F71D1B2564E900707CCD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>infrastructure</string>
+			<key>path</key>
+			<string>infrastructure</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FFD1F71D1B2564E900707CCD</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FFD1F71A1B2564D200707CCD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>api</string>
+			<key>path</key>
+			<string>api</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>FFEF5A0C1B1F268F003919D4</key>
 		<dict>
 			<key>children</key>
@@ -192,6 +255,7 @@
 			<array>
 				<string>FFD1F7141B21A94F00707CCD</string>
 				<string>FFEF5A1D1B1F268F003919D4</string>
+				<string>FFD1F71B1B2564D200707CCD</string>
 				<string>FFA57DEB1B20569D00DD980E</string>
 				<string>FFD1F7161B21AA7A00707CCD</string>
 				<string>FFEF5A1B1B1F268F003919D4</string>
@@ -901,7 +965,10 @@
 		<key>FFEF5A3C1B1F2A25003919D4</key>
 		<dict>
 			<key>children</key>
-			<array/>
+			<array>
+				<string>FFD1F71C1B2564E000707CCD</string>
+				<string>FFD1F7191B2564B200707CCD</string>
+			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
 			<key>path</key>
