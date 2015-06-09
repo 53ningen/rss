@@ -23,6 +23,9 @@
                                     <barButtonItem systemItem="camera" id="Rnr-n1-bBM"/>
                                 </items>
                             </toolbar>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="dy0-MK-BZH">
+                                <rect key="frame" x="0.0" y="64" width="414" height="3"/>
+                            </progressView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="o1a-qY-PSX">
                                 <rect key="frame" x="0.0" y="64" width="414" height="628"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -86,11 +89,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8Sf-Lj-CYi" firstAttribute="top" secondItem="o1a-qY-PSX" secondAttribute="bottom" id="4OF-Jp-HWv"/>
+                            <constraint firstAttribute="trailing" secondItem="dy0-MK-BZH" secondAttribute="trailing" id="NBh-5z-Bc6"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8Sf-Lj-CYi" secondAttribute="bottom" id="OWo-LS-roq"/>
                             <constraint firstItem="o1a-qY-PSX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XZD-ui-AKD"/>
+                            <constraint firstItem="dy0-MK-BZH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="a8N-US-fkG"/>
                             <constraint firstAttribute="trailing" secondItem="8Sf-Lj-CYi" secondAttribute="trailing" id="ayQ-YK-9Gs"/>
                             <constraint firstItem="o1a-qY-PSX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="crn-CX-skq"/>
                             <constraint firstAttribute="trailing" secondItem="o1a-qY-PSX" secondAttribute="trailing" id="jMI-ru-lya"/>
+                            <constraint firstItem="dy0-MK-BZH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="p5v-21-55a"/>
                             <constraint firstItem="8Sf-Lj-CYi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zu8-Jy-JEn"/>
                         </constraints>
                     </view>
@@ -103,6 +109,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="progressView" destination="dy0-MK-BZH" id="W87-vX-9UX"/>
                         <outlet property="reloadButton" destination="V6k-IL-0bY" id="Yf8-cb-vLU"/>
                         <outlet property="tableView" destination="o1a-qY-PSX" id="pj5-gI-NCU"/>
                         <segue destination="T6l-Fw-dCF" kind="show" identifier="cellSegue" id="zUl-zl-7dp"/>
@@ -144,16 +151,22 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="628"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CxZ-f1-X29">
+                                <rect key="frame" x="0.0" y="64" width="414" height="2"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ZsJ-L6-Aza" firstAttribute="top" secondItem="cop-dl-tI8" secondAttribute="bottom" id="49v-Sj-2w1"/>
                             <constraint firstItem="cop-dl-tI8" firstAttribute="top" secondItem="bbG-mG-ITj" secondAttribute="bottom" id="Eg4-gP-AIJ"/>
+                            <constraint firstItem="CxZ-f1-X29" firstAttribute="leading" secondItem="wXB-iT-NPa" secondAttribute="leading" id="O4R-Un-MhN"/>
                             <constraint firstAttribute="trailing" secondItem="cop-dl-tI8" secondAttribute="trailing" id="Q5n-Dk-pek"/>
                             <constraint firstItem="ZsJ-L6-Aza" firstAttribute="leading" secondItem="wXB-iT-NPa" secondAttribute="leading" id="UkQ-oY-IFc"/>
+                            <constraint firstAttribute="trailing" secondItem="CxZ-f1-X29" secondAttribute="trailing" id="aRD-kk-3rh"/>
                             <constraint firstItem="cop-dl-tI8" firstAttribute="leading" secondItem="wXB-iT-NPa" secondAttribute="leading" id="bDc-Ni-JQN"/>
                             <constraint firstAttribute="bottom" secondItem="ZsJ-L6-Aza" secondAttribute="bottom" id="o3W-gH-1fl"/>
                             <constraint firstAttribute="trailing" secondItem="ZsJ-L6-Aza" secondAttribute="trailing" id="wEj-hc-znz"/>
+                            <constraint firstItem="CxZ-f1-X29" firstAttribute="top" secondItem="bbG-mG-ITj" secondAttribute="bottom" id="wVk-aJ-3NT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="RSS Reader" id="9HT-uO-9FH">
@@ -169,6 +182,7 @@
                         <outlet property="forwardButton" destination="R6W-oe-2Ns" id="KUi-xK-P8m"/>
                         <outlet property="navItem" destination="9HT-uO-9FH" id="jsR-Ep-FXI"/>
                         <outlet property="navigationItem" destination="9HT-uO-9FH" id="PFz-sy-hD3"/>
+                        <outlet property="progressView" destination="CxZ-f1-X29" id="jTd-NH-zM8"/>
                         <outlet property="reloadButton" destination="8Fy-RO-gPl" id="Mgu-OT-a0P"/>
                         <outlet property="webView" destination="cop-dl-tI8" id="a4J-V6-HyA"/>
                     </connections>

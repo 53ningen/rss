@@ -5,6 +5,7 @@
 //  Copyright (c) 2015年 gomi_ningen. All rights reserved.
 //
 
+import RxSwift
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSXMLParserDelegate {
@@ -20,14 +21,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBAction func reloadEntries(sender: AnyObject) {
         getEntries()
         tableView.reloadData()
-        tableView.setNeedsDisplay()
     }
     
     func getEntries() {
+        view.addSubview(progressView)
+        self.progressView.setProgress(0.2, animated: true)
         let url: NSURL = NSURL(string: "http://qiita.com/tags/swift/feed.atom")!
         let parser: NSXMLParser = NSXMLParser(contentsOfURL: url)!
         parser.delegate = self
         parser.parse()
+        self.progressView.setProgress(1.0, animated: true)
+        self.progressView.removeFromSuperview()
+        
     }
     
     var token: String = ""
@@ -114,8 +119,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var reloadButton: UIBarButtonItem!
     
-    @IBAction func reload(sender: AnyObject) {
-    }
+    @IBOutlet var progressView: UIProgressView!
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "cellSegue" {

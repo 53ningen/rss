@@ -41,6 +41,7 @@ class ArticleViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var reloadButton: UIBarButtonItem!
     @IBOutlet weak var navItem: UINavigationItem!
+    @IBOutlet var progressView: UIProgressView!
     
     @IBAction func goBack(sender: AnyObject) {
         webView.goBack()
@@ -55,13 +56,17 @@ class ArticleViewController: UIViewController, UIWebViewDelegate {
     }
     
     func webViewDidStartLoad(webView: UIWebView) {
+        view.addSubview(progressView)
+        progressView.setProgress(0.2, animated: true)
     }
    
     func webViewDidFinishLoad(webView: UIWebView) {
         updateButtons()
         updateNavBar()
+        progressView.setProgress(1.0, animated: true)
+        progressView.removeFromSuperview()
     }
-    
+
     func updateButtons() {
         backButton.enabled = webView.canGoBack
         forwardButton.enabled = webView.canGoForward
