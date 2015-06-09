@@ -20,6 +20,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBAction func reloadEntries(sender: AnyObject) {
         getEntries()
         tableView.reloadData()
+        tableView.setNeedsDisplay()
     }
     
     func getEntries() {
