@@ -33,3 +33,18 @@ class rssTests: XCTestCase {
     }
     
 }
+
+import Quick
+import Nimble
+
+class rssSpec: QuickSpec {
+    
+    override func spec() {
+        describe("spec") {
+            it("test") {
+                expect("test").to(equal("test"))
+            }
+        }
+    }
+    
+}
