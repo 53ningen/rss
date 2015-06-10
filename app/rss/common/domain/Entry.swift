@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class Entry: Printable {
+public class Entry: Printable, Equatable {
     
     public let id: String
     public let published: String
@@ -26,7 +26,16 @@ public class Entry: Printable {
     }
     
     public var description: String {
-        return "Entry{id:\(id),title:\(title),author:\(author)}"
+        return "Entry{id:\(id),published:\(published),updated:\(updated),url:\(url),title:\(title),author:\(author)}"
     }
 
+}
+
+public func ==(lhs: Entry, rhs: Entry) -> Bool {
+    return lhs.id == rhs.id
+        && lhs.published == rhs.published
+        && lhs.updated == rhs.updated
+        && lhs.url == rhs.url
+        && lhs.title == rhs.title
+        && lhs.author == rhs.author
 }

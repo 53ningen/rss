@@ -160,6 +160,10 @@ fi
 		<dict>
 			<key>children</key>
 			<array>
+				<string>FF629CA01B27F64A002CC5C7</string>
+				<string>FF629C9E1B27F644002CC5C7</string>
+				<string>FF629C9A1B27F455002CC5C7</string>
+				<string>FF629C981B27F44F002CC5C7</string>
 				<string>FF5AE7561B26F13A000C4C57</string>
 				<string>288EE76B76FD1C5AD31CF274</string>
 				<string>2244B9AEAFE47CA3765E6C82</string>
@@ -319,8 +323,6 @@ fi
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>EntryConverter.swift</string>
 			<key>path</key>
 			<string>EntryConverter.swift</string>
 			<key>sourceTree</key>
@@ -332,21 +334,6 @@ fi
 			<string>FF5AE7161B26CF98000C4C57</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
-		</dict>
-		<key>FF5AE7181B26D060000C4C57</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>FF5AE7161B26CF98000C4C57</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>entry</string>
-			<key>path</key>
-			<string>entry</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>FF5AE7561B26F13A000C4C57</key>
 		<dict>
@@ -441,12 +428,181 @@ fi
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>ui</string>
 			<key>path</key>
 			<string>ui</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FF629C8E1B27EE83002CC5C7</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FF629C8F1B27EE8B002CC5C7</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>common</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FF629C8F1B27EE8B002CC5C7</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FF629C901B27EE95002CC5C7</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>infrastructure</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FF629C901B27EE95002CC5C7</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FF629C9C1B27F5DA002CC5C7</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>api</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FF629C931B27F169002CC5C7</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FF629C961B27F186002CC5C7</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>resources</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FF629C961B27F186002CC5C7</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FF629CA41B27F729002CC5C7</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>api</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FF629C981B27F44F002CC5C7</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Nimble.framework</string>
+			<key>path</key>
+			<string>Vendor/Nimble/build/Debug-iphoneos/Nimble.framework</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FF629C9A1B27F455002CC5C7</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Quick.framework</string>
+			<key>path</key>
+			<string>Vendor/Quick/build/Debug-iphoneos/Quick.framework</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FF629C9C1B27F5DA002CC5C7</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>EntryConverterTest.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FF629C9D1B27F5DA002CC5C7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FF629C9C1B27F5DA002CC5C7</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FF629C9E1B27F644002CC5C7</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Nimble.framework</string>
+			<key>path</key>
+			<string>Vendor/Nimble/build/Debug-iphoneos/Nimble.framework</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FF629C9F1B27F644002CC5C7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FF629C9E1B27F644002CC5C7</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FF629CA01B27F64A002CC5C7</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Quick.framework</string>
+			<key>path</key>
+			<string>Vendor/Quick/build/Debug-iphoneos/Quick.framework</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FF629CA11B27F64A002CC5C7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FF629CA01B27F64A002CC5C7</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FF629CA41B27F729002CC5C7</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xml</string>
+			<key>path</key>
+			<string>entries.xml</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FF629CA51B27F729002CC5C7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FF629CA41B27F729002CC5C7</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
 		</dict>
 		<key>FFA57DEA1B20569D00DD980E</key>
 		<dict>
@@ -528,8 +684,6 @@ fi
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
 			<string>image.jpeg</string>
-			<key>name</key>
-			<string>cocoa.jpg</string>
 			<key>path</key>
 			<string>cocoa.jpg</string>
 			<key>sourceTree</key>
@@ -594,7 +748,7 @@ fi
 		<dict>
 			<key>children</key>
 			<array>
-				<string>FF5AE7181B26D060000C4C57</string>
+				<string>FF5AE7161B26CF98000C4C57</string>
 				<string>FFD1F71A1B2564D200707CCD</string>
 			</array>
 			<key>isa</key>
@@ -795,6 +949,7 @@ fi
 			<string>2147483647</string>
 			<key>files</key>
 			<array>
+				<string>FF629CA51B27F729002CC5C7</string>
 				<string>FFEF5A201B1F268F003919D4</string>
 				<string>FFD1F7181B21C01500707CCD</string>
 				<string>FFEF5A251B1F268F003919D4</string>
@@ -1030,6 +1185,7 @@ fi
 			<string>2147483647</string>
 			<key>files</key>
 			<array>
+				<string>FF629C9D1B27F5DA002CC5C7</string>
 				<string>FFEF5A311B1F268F003919D4</string>
 			</array>
 			<key>isa</key>
@@ -1043,6 +1199,8 @@ fi
 			<string>2147483647</string>
 			<key>files</key>
 			<array>
+				<string>FF629CA11B27F64A002CC5C7</string>
+				<string>FF629C9F1B27F644002CC5C7</string>
 				<string>EA6A5014ADB7C73E1C9DDF98</string>
 			</array>
 			<key>isa</key>
@@ -1130,6 +1288,8 @@ fi
 		<dict>
 			<key>children</key>
 			<array>
+				<string>FF629C931B27F169002CC5C7</string>
+				<string>FF629C8E1B27EE83002CC5C7</string>
 				<string>FFEF5A301B1F268F003919D4</string>
 				<string>FFEF5A2E1B1F268F003919D4</string>
 			</array>
@@ -1425,6 +1585,8 @@ fi
 				<array>
 					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
 					<string>$(inherited)</string>
+					<string>$(PROJECT_DIR)/Vendor/Nimble/build/Debug-iphoneos</string>
+					<string>$(PROJECT_DIR)/Vendor/Quick/build/Debug-iphoneos</string>
 				</array>
 				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
 				<array>
@@ -1457,6 +1619,8 @@ fi
 				<array>
 					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
 					<string>$(inherited)</string>
+					<string>$(PROJECT_DIR)/Vendor/Nimble/build/Debug-iphoneos</string>
+					<string>$(PROJECT_DIR)/Vendor/Quick/build/Debug-iphoneos</string>
 				</array>
 				<key>INFOPLIST_FILE</key>
 				<string>app/rssTests/Supporting Files/Info.plist</string>
@@ -1495,8 +1659,6 @@ fi
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>common</string>
 			<key>path</key>
 			<string>common</string>
 			<key>sourceTree</key>

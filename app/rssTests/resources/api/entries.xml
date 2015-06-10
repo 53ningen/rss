@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xml:lang="ja-JP" xmlns="http://www.w3.org/2005/Atom">
+    <entry>
+        <id>id</id>
+        <published>published</published>
+        <updated>updated</updated>
+        <url>http://gochiusa.com</url>
+        <title>title</title>
+        <content>content</content>
+        <author>
+            <name>author</name>
+        </author>
+    </entry>
+    <entry>
+        <id>id2</id>
+        <published>published2</published>
+        <updated>updated2</updated>
+        <url>http://gochiusa.com</url>
+        <title>title2</title>
+        <content>content2</content>
+        <author>
+            <name>author2</name>
+        </author>
+    </entry>
+</feed>
