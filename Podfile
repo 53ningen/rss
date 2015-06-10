@@ -8,6 +8,8 @@ target 'rss' do
 end
 
 target 'rssTests' do
+    pod 'RxSwift'
+    pod 'RxCocoa'
     pod 'Quick'
     pod 'Nimble'
 end
